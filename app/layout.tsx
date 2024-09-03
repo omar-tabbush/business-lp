@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { BackgroundBeamsWithCollision } from "@/components/ui/background-beams-with-collision";
+import { FloatingNav } from "@/components/ui/floating-navbar";
+import { cn } from "@/lib/utils";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,7 +19,25 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={cn(inter.className, 'dark')}>
+        <FloatingNav navItems={[
+          {
+            name: "Home",
+            link: "/",
+          },
+          {
+            name: "About",
+            link: "/about",
+          },
+          {
+            name: "Contact",
+            link: "/contact",
+          }
+        ]} />
+        <BackgroundBeamsWithCollision>
+          {children}
+        </BackgroundBeamsWithCollision>
+      </body>
     </html>
   );
 }
