@@ -22,7 +22,7 @@ export default function Hero() {
         >
             Your project deserves more than just code let{"'"}s make it extraordinary{", "}
             <Highlight className="text-black dark:text-white">
-                before it's too late
+                before it{"'"}s too late
             </Highlight>.
         </motion.h1>
     </HeroHighlight>
