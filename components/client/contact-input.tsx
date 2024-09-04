@@ -4,6 +4,7 @@ import { Label } from "../ui/label";
 import { Input } from "../ui/input";
 import { cn } from "@/lib/utils";
 import { Resend } from 'resend';
+import { TextArea } from "../ui/textarea";
 
 
 const LabelInputContainer = ({
@@ -39,10 +40,9 @@ export function ContactInput() {
       cc: email
     })
     console.log({ resendResponse });
-
   }
   return (
-    <form className="my-8 z-10 w-full" action={action}>
+    <form className="my-8 z-10 w-full space-y-2" action={action}>
 
       <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-2 space-x-0 mb-4 w-full">
         <LabelInputContainer>
@@ -53,11 +53,11 @@ export function ContactInput() {
           <Label htmlFor="email">Email Address</Label>
           <Input required id="email" name="email" placeholder="projectmayhem@fc.com" type="email" />
         </LabelInputContainer>
-        <LabelInputContainer className="mb-4 ">
-          <Label htmlFor="message">Your message</Label>
-          <Input required id="message" name="message" placeholder="I want to turn my idea into reality.." type="text" />
-        </LabelInputContainer>
       </div>
+      <LabelInputContainer className="mb-4 ">
+        <Label htmlFor="message">Your message</Label>
+        <TextArea required id="message" name="message" placeholder="I want to turn my idea into reality.." />
+      </LabelInputContainer>
 
       <button
         className="z-20 bg-gradient-to-br relative group/btn cursor-pointer from-black dark:from-zinc-900 dark:to-zinc-900 to-neutral-600 block dark:bg-zinc-800 w-full text-white rounded-md h-10 font-medium shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:shadow-[0px_1px_0px_0px_var(--zinc-800)_inset,0px_-1px_0px_0px_var(--zinc-800)_inset]"

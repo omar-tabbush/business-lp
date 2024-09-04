@@ -2,6 +2,7 @@ import React from "react";
 import Hero from "@/components/client/hero";
 import StackMarquee from "@/components/stack-marquee"
 import { ContactForm } from "@/components/contact-form";
+import Footer from "@/components/footer";
 
 export default function CoverDemo() {
   return (
@@ -18,6 +19,10 @@ export default function CoverDemo() {
       <section>
         <ContactForm />
       </section>
+      <section className="relative">
+        <Footer />
+      </section>
+
     </>
   );
 }
